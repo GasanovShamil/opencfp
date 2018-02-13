@@ -2,9 +2,9 @@ language: php
 php:
   - '7.0'
   - '7.1'
-  - hhvm # on Trusty only
-  - nightly
+
 
 script:
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then xdebug-enable; fi
   - docker run --rm -v $PWD:/app phpqa/php-cs-fixer fix .
   - docker run --rm -v $PWD:/app phpqa/security-checker security:check
