@@ -1,6 +1,10 @@
-anguage: php
+language: php
 php:
-  - '5.6'
+  - '7.0'
   - '7.1'
   - hhvm # on Trusty only
   - nightly
+
+script:
+  - docker run --rm -v $PWD:/app phpqa/php-cs-fixer fix .
+  - docker run --rm -v $PWD:/app phpqa/security-checker security:check
