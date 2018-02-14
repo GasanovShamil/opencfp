@@ -13,3 +13,7 @@ deploy:
   provider: heroku
   api_key:
     secure: "4915ac59-d9c7-486c-9f16-c443fc20fc5d"
+  app: indisweb
+  on:
+    repo: GasanovShamil/opencfp
+    branch: master
